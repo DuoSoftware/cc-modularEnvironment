@@ -1,0 +1,11 @@
+<!-- application main view template -->
+<div class="core-app-wrapper">
+	<header layout="column" layout-align="center center">
+		<h1>Invoice App Partial !</h1>
+		<h2>{{invoice.welcomeMsg}}</h2>	
+	</header>
+	<div class="innerviews">
+		<div ng-show="$state.includes('launcher.invoice.listview')" ui-view="invoice-list"></div>
+		<div ng-show="$state.includes('launcher.invoice.detailview')" ui-view="invoice-detail"></div>
+	</div>
+</div>

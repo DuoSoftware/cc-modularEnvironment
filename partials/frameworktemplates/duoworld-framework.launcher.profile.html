@@ -1,0 +1,37 @@
+<div id="dw-child-test-app-1" class="md-child-application-container" layout="column" layout-align="start center">
+    <div style="height:1px;bckground-color:rgba(0, 0, 0, 0.15);width:100%;z-index:3;" ng-mouseenter="hideHeaderControlBar = false"></div>
+    <div class="dw-child-application-header-control-bar" layout="row" layout-align="space-between center" style="background-color:{{accentpalette}} !important;top:0px !important;" ng-if="!hideHeaderControlBar || keepTitleBar">
+        <div class="dw-child-application-header-control-bar-left-section" layout="row" layout-align="center center">
+            <img class="dw-child-application-header-icon" ng-src="{{$root.opendAppIconUrl}}" err-src="images/appIcons/untitledapplication.png" width="24" height="24" style="    border-radius: 100%;">
+            <span class="dw-child-application-header-title">{{$root.opendAppName}}</span>
+        </div>
+        <div class="dw-child-application-header-control-bar-right-section" layout="row" layout-align="end center">
+            <md-button class="md-icon-button animatedHeaderControl" aria-label="Minimise Application" ng-click="childApplicationTitleBarpin()">
+                <md-icon md-svg-icon="icons/pin.svg" alt="pinit" class="cad24" ng-show="!keepTitleBar"></md-icon>
+                <md-icon md-svg-icon="icons/pin-off.svg" alt="pinit" class="cad24" ng-show="keepTitleBar"></md-icon>
+                <md-tooltip>pin It</md-tooltip>
+            </md-button>
+            <md-button class="md-icon-button animatedHeaderControl" aria-label="Close Application" ng-click="childApplicationClose()">
+                <md-icon md-svg-icon="icons/ic_close_24px.svg" alt="close" class="cad24"></md-icon>
+                <md-tooltip>Close</md-tooltip>
+            </md-button>
+        </div>
+    </div>
+    <div class="dw-childapp-backgroundcover defaultView" layout="column" layout-align="center center">
+        <div class="dw-childapp-splash-container" layout="column" layout-align="end center">\
+            <div class="dw-childapp-splash-logo-container" layout="column" layout-align="center center">
+                <img ng-src="{{$root.opendAppIconUrl}}" err-src="images/appIcons/untitledapplication.png" class="dw-childapp-splash-logo top-splash-elements-entry" width="100" height="100" />
+            </div>
+            <div class="dw-childapp-splash-text-container" layout="column" layout-align="space-around center">
+                <span class="dw-childapp-splash-title bottom-splash-elements-entry">{{$root.opendAppName}}</span>
+                <md-progress-circular class="dw-childapp-splash-loadingspinner bottom-splash-elements-entry" md-mode="indeterminate"></md-progress-circular>
+                <span class="dw-childapp-splash-loadingtextindicator bottom-splash-elements-entry">loading</span>
+            </div>
+        </div>
+    </div>
+    <div ng-mouseenter="hideHeaderControlBar = true" class="customeAppContainer" ng-class="{adjustHeight : keepTitleBar}">
+        <div id="idRenderDiv">
+            <iframe style="width:100%;height:100%;border : 0px none;" src="/CC_Apps/app.profile/src/index.html"></iframe>
+        </div>
+    </div>
+</div>
