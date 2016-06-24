@@ -911,6 +911,8 @@
 
     duoWorldFrameworkShellCtrl.$inject = ['$rootScope', '$scope', '$state', '$http', '$location', '$mdSidenav', '$mdDialog', '$mdToast', '$presence', '$auth', '$apps', '$v6urls', '$helpers', '$objectstore', '$timeout', '$fws', '$document', '$q', '$storage'];
 
-    mambatiFrameworkShell.controller('duoworld-framework-shell-ctrl', duoWorldFrameworkShellCtrl);
+    angular
+    .module('mambatiFrameworkShell')
+    .controller('duoworld-framework-shell-ctrl', duoWorldFrameworkShellCtrl);
 
 }());

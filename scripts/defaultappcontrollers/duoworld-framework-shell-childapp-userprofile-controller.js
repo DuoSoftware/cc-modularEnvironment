@@ -264,7 +264,9 @@
 
         duoworldFrameworkShellLauncherUserprofileCtrl.$inject = ['$scope', '$rootScope', '$mdDialog', '$window', '$http', '$auth', 'notifications', '$charge', '$objectstore', '$storage', '$uploader'];
 
-        mambatiFrameworkShell.controller('duoworld-framework-shell-launcher-userprofile-ctrl', duoworldFrameworkShellLauncherUserprofileCtrl);
+        angular
+            .module('mambatiFrameworkShell')
+            .controller('duoworld-framework-shell-launcher-userprofile-ctrl', duoworldFrameworkShellLauncherUserprofileCtrl);
     })();
 
     //_____________________________________________________________________________________________profileCtrl start
@@ -470,7 +472,9 @@
 
         addCardCtrl.$inject = ['$scope', '$rootScope', '$mdDialog', 'notifications', 'account', 'cardObject', 'userObject', '$charge'];
 
-        mambatiFrameworkShell.controller('addCardCtrl', addCardCtrl);
+        angular
+            .module('mambatiFrameworkShell')
+            .controller('addCardCtrl', addCardCtrl);
     })();
 
     //_____________________________________________________________________________________________addCardCtrl end
@@ -522,14 +526,18 @@
 
         changePasswordCtrl.$inject = ['$scope', '$rootScope', '$mdDialog', '$http', 'notifications'];
 
-        mambatiFrameworkShell.controller('changePasswordCtrl', changePasswordCtrl);
+        angular
+            .module('mambatiFrameworkShell')
+            .controller('changePasswordCtrl', changePasswordCtrl);
     })();
 
     //_____________________________________________________________________________________________changePasswordCtrl end
 
     //_____________________________________________________________________________________________components start
 
-    mambatiFrameworkShell.directive('customOnChange', customOnChangeFunc);
+    angular
+        .module('mambatiFrameworkShell')
+        .directive('customOnChange', customOnChangeFunc);
 
     function customOnChangeFunc() {
         return {
@@ -541,9 +549,7 @@
         };
     };
 
-    
-
-        function filterByPatternFunc ($rootScope) {
+    function filterByPatternFunc ($rootScope) {
         return function (cardTypes, CardNo) {
             if (!CardNo) {
                 CardNo = "";
@@ -561,11 +567,16 @@
             }
         }
     };
-    mambatiFrameworkShell.filter("filterByPattern", filterByPatternFunc) ;
+    
+    angular
+        .module('mambatiFrameworkShell')
+        .filter("filterByPattern", filterByPatternFunc) ;
 
      filterByPatternFunc.$inject = ['$rootScope'];
 
-    mambatiFrameworkShell.directive('angularMask', angularMaskFunc);
+    angular
+        .module('mambatiFrameworkShell')
+        .directive('angularMask', angularMaskFunc);
 
     function angularMaskFunc() {
         return {
@@ -626,7 +637,9 @@
     };
 
     //Password Strength Directive - Start
-    mambatiFrameworkShell.directive('passwordStrengthIndicator', passwordStrengthIndicator);
+    angular
+        .module('mambatiFrameworkShell')
+        .directive('passwordStrengthIndicator', passwordStrengthIndicator);
 
     function passwordStrengthIndicator() {
         return {
@@ -703,7 +716,9 @@
     }
     //Password Strength Directive - End
     //Hide the Account Numbers in show all Accounts
-    mambatiFrameworkShell.filter('hideNumbers', hideNumbersFunc);
+    angular
+        .module('mambatiFrameworkShell')
+        .filter('hideNumbers', hideNumbersFunc);
 
     function hideNumbersFunc() {
         return function (input) {
@@ -811,6 +826,8 @@
 
         uploadPictureCtrl.$inject = ['$scope', '$rootScope', '$mdDialog', 'notifications', '$uploader'];
 
-        mambatiFrameworkShell.controller('uploadPictureCtrl', uploadPictureCtrl);
+        angular
+            .module('mambatiFrameworkShell')
+            .controller('uploadPictureCtrl', uploadPictureCtrl);
     })();
     //--------------------------------------------------------------------------------------------------------uploadPictureCtrl end

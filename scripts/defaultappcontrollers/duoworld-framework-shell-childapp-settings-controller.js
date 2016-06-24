@@ -457,5 +457,7 @@
 
     duoworldFrameworkShellLauncherSettingsControl.$inject = ['$rootScope', '$scope', '$state', '$objectstore', '$http', '$rootScope', '$timeout', '$mdToast', '$mdDialog', '$uploader', '$auth'];
 
-    mambatiFrameworkShell.controller('duoworld-framework-shell-launcher-settings-ctrl', duoworldFrameworkShellLauncherSettingsControl);
+    angular
+        .module('mambatiFrameworkShell')
+        .controller('duoworld-framework-shell-launcher-settings-ctrl', duoworldFrameworkShellLauncherSettingsControl);
 })();

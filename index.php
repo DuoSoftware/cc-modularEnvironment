@@ -24,7 +24,6 @@ header('Location: /../mobile_shell');
         <link rel="stylesheet" type="text/css" href="bower_components/perfect-scrollbar/src/perfect-scrollbar.css">
         <link rel="stylesheet" type="text/css" href="shell_specific_components/styles/animations.min.css" />
         <link rel="stylesheet" type="text/css" href="shell_specific_components/styles/appshellcommon.css" />
-        <link rel="stylesheet" type="text/css" href="shell_specific_components/styles/coreAppDirective-styles.css" />
         <!-- <link rel="stylesheet" type="text/css" href="shell_specific_components/styles/refractoredStyles.css" /> -->
         <link rel="stylesheet" type="text/css" href="shell_specific_components/styles/custommaterialstyling.css" />
         <link rel="stylesheet" type="text/css" href="shell_specific_components/styles/v-accordion.css" />
@@ -378,11 +377,13 @@ header('Location: /../mobile_shell');
             <script src="shell_specific_components/filters/dw-shell-common-filters.js"></script>
             <script src="shell_specific_components/libs/childapp-container-directive.js"></script>
             <script src="shell_specific_components/applicationbootstrap/duoworld-frameworkshell.js"></script>
+            <script src="shell_specific_components/applicationbootstrap/duoworld-frameworkshell-core-states.js"></script>
             <script src="shell_specific_components/applicationbootstrap/duoworld-themeconfiguration.js"></script>
             <script src="shell_specific_components/factories/duoworld-tennantinfo-factory.js"></script>
-            <script src="shell_specific_components/controllers/duoworld-frameworkentrycontroller.js"></script>
+<!--             <script src="shell_specific_components/controllers/duoworld-frameworkentrycontroller.js"></script> -->
             <script src="shell_specific_components/controllers/duoworld-framework-shell-controller.js"></script>
             <script src="shell_specific_components/controllers/duoworld-framework-shell-dock-controller.js"></script>
+
             <script src="shell_specific_components/controllers/duoworld-framework-shell-launcher-controller.js"></script>
             <script src="shell_specific_components/controllers/duoworld-framework-shell-launcher-customapps-controller.js"></script>
             <script src="shell_specific_components/controllers/duoworld-framework-shell-launcher-defaultapps-controller.js"></script>

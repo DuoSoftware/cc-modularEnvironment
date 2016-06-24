@@ -1,11 +1,44 @@
 <!-- application main view template -->
-<div class="core-app-wrapper">
-	<header layout="column" layout-align="center center">
-		<h1>Invoice App Partial !</h1>
-		<h2>{{invoice.welcomeMsg}}</h2>	
-	</header>
-	<div class="innerviews">
-		<div ng-show="$state.includes('launcher.invoice.listview')" ui-view="invoice-list"></div>
-		<div ng-show="$state.includes('launcher.invoice.detailview')" ui-view="invoice-detail"></div>
+<style>
+	.core-app-wrapper{
+		position:relative;
+		top:0;
+		left:0;   
+		width:100%;
+		height:100%;
+		overflow:auto;  
+		background:none;     
+	}
+	.core-app-view-container{
+		width:960px;
+		height:500px;
+		background:#fff;  
+	}
+	.core-app-child-view{
+		width:inherit;
+		height:inherit;  
+	}
+</style>
+<div class="core-app-wrapper" layout="column" layout-align="center center">
+	<div class="core-app-view-container md-whiteframe-6dp">
+		<md-toolbar class="md-toolbar-medium">
+            <div class="md-toolbar-tools" layout="row" layout-align="space-apart center">
+            	<section>
+            		Invoice App Sample
+            	</section>
+            	<section>
+            		<md-button class="md-accent" ng-click="invoice.switchchildstate('launcher.invoice.listview')">
+            			list view
+            		</md-button>
+            		<md-button class="md-accent" ng-click="invoice.switchchildstate('launcher.invoice.detailview')">
+            			detail view
+            		</md-button>
+            	</section>
+            </div>
+        </md-toolbar>
+        <section class="core-app-child-view">
+        	<div ng-show="$state.includes('launcher.invoice.listview')" ui-view="invoice-list"></div>
+        	<div ng-show="$state.includes('launcher.invoice.detailview')" ui-view="invoice-detail"></div>
+        </section>
 	</div>
 </div>

@@ -8,5 +8,7 @@
 
 	duoworldFrameworkShellLauncherDefaultappsCtrl.$inject = ['$scope','$state','$rootScope','$presence','$auth','$apps','$helpers'];
 
-	mambatiFrameworkShell.controller('duoworld-framework-shell-launcher-defaultapps-ctrl', duoworldFrameworkShellLauncherDefaultappsCtrl);
+	angular
+    	.module('mambatiFrameworkShell')
+    	.controller('duoworld-framework-shell-launcher-defaultapps-ctrl', duoworldFrameworkShellLauncherDefaultappsCtrl);
 })();

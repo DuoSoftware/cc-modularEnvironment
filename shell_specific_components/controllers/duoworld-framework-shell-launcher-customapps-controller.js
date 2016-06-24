@@ -141,5 +141,7 @@
 
     duoworldFrameworkShellLauncherCustomappsCtrl.$inject = ['$scope', '$state', '$stateParams', '$rootScope', '$presence', '$auth', '$apps', '$helpers', '$timeout', '$mdDialog'];
 
-    mambatiFrameworkShell.controller('duoworld-framework-shell-launcher-customapps-ctrl', duoworldFrameworkShellLauncherCustomappsCtrl);
+    angular
+        .module('mambatiFrameworkShell')
+        .controller('duoworld-framework-shell-launcher-customapps-ctrl', duoworldFrameworkShellLauncherCustomappsCtrl);
 })();

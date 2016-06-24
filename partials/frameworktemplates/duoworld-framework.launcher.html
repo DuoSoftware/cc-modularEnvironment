@@ -1,9 +1,9 @@
 <div id="duoworld-framework-launcher-container">
+    <!-- shell apps ui-view configurations -->
     <div ng-show="$state.includes('launcher.marketplace')" class="duoworld-framework-launcher-application-container" ui-view="marketplace"></div>
     <div ng-show="$state.includes('launcher.userprofile')" class="duoworld-framework-launcher-application-container" ui-view="userprofile"></div>
     <div ng-show="$state.includes('launcher.tennantexplorer')" class="duoworld-framework-launcher-application-container" ui-view="tennantexplorer"></div>
     <div ng-show="$state.includes('launcher.shellsettings')" class="duoworld-framework-launcher-application-container" ui-view="shellsettings"></div>
-    <div ng-show="$state.includes('launcher.connect')" class="duoworld-framework-launcher-application-container" ui-view="connect"></div>
-    <!--	<div ng-show="$state.includes('launcher.customapp')"class="duoworld-framework-launcher-application-container" ui-view="customapp"></div>-->
-    <div ng-show="$state.includes('launcher.invoice')" class="duoworld-framework-launcher-application-container" style="background:rgba(255,255,255,0.5)" ui-view="invoice"></div>
+    <!-- core apps ui-view configurations -->
+    <div ng-show="$state.includes('launcher.invoice')" class="duoworld-framework-launcher-application-container" ui-view="invoice"></div>
 </div>

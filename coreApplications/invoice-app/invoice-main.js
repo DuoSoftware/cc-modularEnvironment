@@ -12,14 +12,14 @@ angular
 	.module('cc.app.invoice')
 	.config(['$stateProvider', '$futureStateProvider', '$stickyStateProvider', invoiceConfig])
 	.controller('cc-app-invoice-controller',['$rootScope','$state', '$http', '$location', '$mdDialog', '$mdToast',invoiceController]);
-
 //named function (use named functions instead of passing anonymous function)
 
 function invoiceConfig($sp,$fsp,$ssp){
+
 	$sp
 	.state('launcher.invoice', {
         url: '/invoice',
-        sticky: true,
+        sticky:true,
         views: {
             'invoice': {
                 templateUrl: 'coreApplications/invoice-app/cc-app-invoice.html',
@@ -30,28 +30,35 @@ function invoiceConfig($sp,$fsp,$ssp){
     })
     .state('launcher.invoice.listview',{
     	url: '/list',
+        sticky:true,
     	views: {
     		'invoice-list': {
-    			templateUrl: 'coreApplications/invoice-app/app-views/list-view.html'
-    		} 
+    		      templateUrl: 'coreApplications/invoice-app/app-views/list-view.html',
+    		      controller: 'cc-app-invoice-controller as invoice'
+            } 
     	}
     })
     .state('launcher.invoice.detailview',{
     	url: '/detail',
-    	sticky: true,
+        sticky:true,
     	views: {
     		'invoice-detail': {
-    			templateUrl: 'coreApplications/invoice-app/app-views/detail-view.html'
-    		} 
+    		      templateUrl: 'coreApplications/invoice-app/app-views/detail-view.html',
+    		      controller: 'cc-app-invoice-controller as invoice'
+            } 
     	}
     });
 };
 
-function invoiceController($rootScope, $state, $http, $location, $mdDialog, $mdToast){
-	this.welcomeMsg = "This is the invoice welcome message you are viewing !"
-			.childview1Msg = "This message is from list view of the invoice app !"
-				.childview2Msg = "This message is from detail view of the invoice app !";
 
+function invoiceController($rootScope, $state, $http, $location, $mdDialog, $mdToast){
+	this.welcomeMsg = "This is the invoice welcome message you are viewing !";
+	this.childview1Msg = "This message is from list view of the invoice app !";
+	this.childview2Msg = "This message is from detail view of the invoice app !";
+
+    this.switchchildstate = function(state){
+        $state.go(state);
+    };
 };
 
 // angular

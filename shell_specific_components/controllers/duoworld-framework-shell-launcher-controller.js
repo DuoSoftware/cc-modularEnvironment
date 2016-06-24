@@ -16,5 +16,7 @@
 
 	duoWorldFrameworkShellLauncherCtrl.$inject = ['$scope','$state','$rootScope','$presence','$auth','$apps','$helpers'];
 
-	mambatiFrameworkShell.controller('duoworld-framework-shell-launcher-ctrl', duoWorldFrameworkShellLauncherCtrl);
+	angular
+    	.module('mambatiFrameworkShell')
+		.controller('duoworld-framework-shell-launcher-ctrl', duoWorldFrameworkShellLauncherCtrl);
 })();
